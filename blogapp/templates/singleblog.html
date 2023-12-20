@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog Application</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="{% static 'css/bootstrap.js' %}"></script>
+	 <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-fixed bg-dark navbar-dark" style="margin-bottom: 0px;">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="/index/">Blog Application</a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav" style="margin-left: auto;">
+    
+    
+    <li class="nav-item">
+      <a class="nav-link" href="#">Welcome ( {{d}} )</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/sign/"><i class="fa fa-sign-in"></i> Logout</a>
+    </li>
+  </ul>
+</nav>
+<div class="container-fluid jumbotron">
+	<div class="panel-group">
+	{% for x in blog %}
+    <div class="alert alert-success">
+    <strong>Blog Id - </strong> ({{x.blogid}})</a>
+  </div>
+  <div class="alert alert-info">
+    <strong>User Id - </strong> ({{x.userid}})</a>
+  </div>
+  <div class="alert alert-warning">
+    <strong>Subject - </strong> ({{x.subject}})
+  </div>
+  <div class="alert alert-danger">
+    <strong>Blog - </strong> <br> {{x.blogtext}}
+  </div>
+  <div class="alert alert-dark">
+    <strong>Rate - </strong> ({{x.rating}}) <br> <input type="range" min="0" max="10" name="">
+  </div>
+    {% endfor %}
+</div>
+</div>
+</body>
+</html>

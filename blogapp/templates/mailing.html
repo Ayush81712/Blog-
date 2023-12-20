@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	{% load static %}
+</head>
+<body>
+	<form action="/sendmail/" method="post">
+		To Email : <input type="text" name="mail"><br><br>
+		Subject : <input type="text" name="subject"><br><br>
+		Message : <textarea cols="14" rows="5" name="msg"></textarea><br><br>
+		<input type="Submit" name="submit" value="Send"> 
+	</form>
+		 <h1>{{res}}</h1>
+</body>
+</html>

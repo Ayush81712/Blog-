@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog Application</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="{% static 'css/bootstrap.js' %}"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm navbar-fixed bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="/index/">Blog Application</a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav" style="margin-left: auto;">
+    
+    
+    <li class="nav-item">
+      <a class="nav-link" href="#">Welcome ( {{uid}} )</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/sign/"><i class="fa fa-sign-in"></i> Logout</a>
+    </li>
+  </ul>
+</nav>
+	<div class="jumbotron">
+		<h1 class="text-center text-primary">Post Your Blog Here</h1>
+		<form action="/saveblog/" method="post">
+		<div class="row form-group">
+			<div class="col-md-3">
+				
+			</div>
+			<div class="col-md-6">
+				<label>Blog Id :</label><input class="form-control" type="text" name="blogid">
+				<label>user Id :</label><input class="form-control" value="{{uid}}" type="text" name="userid" readonly><br>
+				<label>Subject :</label><input class="form-control" type="text" name="subject"><br>
+				<label>Subject :</label><textarea class="form-control" rows="5" cols="3" type="text" name="blogtext"></textarea><br>
+				<input type="Submit" class="form-control btn btn-primary" name="submit" value="Post"><br><br>
+				<input type="reset"  class="form-control btn btn-success" name="cancel">
+		</div>
+		<div class="col-md-3">
+				
+			</div>
+	</form>
+	</div>
+</body>
+</html>
